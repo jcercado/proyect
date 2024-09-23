@@ -1,0 +1,30 @@
+proyect/
+│
+├── app/
+│   ├── controllers/
+│   │   ├── CrudController.php
+│   │   └── InicioController.php
+│   ├── models/
+│   │   └── Crud.php
+│   ├── views/
+│       ├── crud/
+│       │   ├── create.php
+│       │   ├── edit.php
+│       │   └── index.php
+│       ├── layouts/
+│       │   └── base.php
+│       ├── errors/
+│       │   └── 404.php
+│       ├── inicio/
+│           └── index.php
+│
+├── public/
+│   ├── index.php
+│   └── .htaccess
+│
+├── core/
+│   ├── Controller.php
+│   ├── Model.php
+│   └── Database.php
+│
+└── .htaccess
