@@ -1,15 +1,28 @@
 <?php
+session_start();
+
+// Verifica si el usuario está autenticado
+if (!isset($_SESSION['user_id'])) {
+    header('Location: /login'); // Redirigir si no está autenticado
+    exit();
+}
+
+// Verifica el rol
+if ($_SESSION['role'] !== 'admin') {
+    echo "Acceso denegado."; // Manejo de acceso
+    exit();
+}
+
 function url($path) {
     return '/'.$path; // Retorna la URL relativa
 }
 
-// Obtener la URL actual, verificando si $_GET['url'] está definido
+// Obtener la URL actual
 $currentUrl = isset($_GET['url']) ? $_GET['url'] : 'inicio'; // 'inicio' por defecto si no existe 'url'
 ?>
 
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,14 +30,11 @@ $currentUrl = isset($_GET['url']) ? $_GET['url'] : 'inicio'; // 'inicio' por def
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         .nav-link.active {
-            color: #fff;
-            /* Color de texto cuando activo */
-            background-color: #007bff;
-            /* Fondo del enlace activo */
+            color: #fff; /* Color de texto cuando activo */
+            background-color: #007bff; /* Fondo del enlace activo */
         }
     </style>
 </head>
-
 <body>
     <div class="container-fluid mt-5">
         <div class="row">
@@ -61,5 +71,4 @@ $currentUrl = isset($_GET['url']) ? $_GET['url'] : 'inicio'; // 'inicio' por def
     <!-- Scripts de Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
