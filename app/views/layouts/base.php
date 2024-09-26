@@ -1,18 +1,6 @@
 <?php
 session_start();
 
-// Verifica si el usuario está autenticado
-if (!isset($_SESSION['user_id'])) {
-    header('Location: /login'); // Redirigir si no está autenticado
-    exit();
-}
-
-// Verifica el rol
-if ($_SESSION['role'] !== 'admin') {
-    echo "Acceso denegado."; // Manejo de acceso
-    exit();
-}
-
 function url($path) {
     return '/'.$path; // Retorna la URL relativa
 }

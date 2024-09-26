@@ -2,22 +2,37 @@ proyect/
 │
 ├── app/
 │   ├── controllers/
+│   │   ├── ContactoController.php
 │   │   ├── CrudController.php
+│   │   ├── InicioController.php
+│   │   ├── RegistroController.php
+│   │   ├── StockController.php
 │   │   └── InicioController.php
 │   ├── models/
-│   │   └── Crud.php
+│   │   ├── Crud.php
+│   │   ├── Stock.php
+│   │   └── UserModel.php
 │   ├── views/
+│       ├── contacto/
+│       |   └── index.php
 │       ├── crud/
 │       │   ├── create.php
 │       │   ├── edit.php
 │       │   └── index.php
+│       ├── errors/
+│       |   └── 404.php
+│       ├── inicio/
+│       |   └── index.php
 │       ├── layouts/
 │       │   └── base.php
-│       ├── errors/
-│       │   └── 404.php
-│       ├── inicio/
+│       ├── login/
+│       │   └── login.php
+│       ├── registro/
+│       │   └── index.php
+│       ├── stock/
+│       │   ├── create.php
+│       │   ├── edit.php
 │           └── index.php
-│
 ├── public/
 │   ├── index.php
 │   └── .htaccess
